@@ -10,6 +10,7 @@ public class ChessController extends JFrame{
     private int count = 0;
 
     public ChessController(){
+
         this.setTitle("双人五子棋");
         this.setSize(new Dimension(650, 680));
         this.setResizable(false);
