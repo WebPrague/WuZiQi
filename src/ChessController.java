@@ -34,6 +34,7 @@ public class ChessController extends JFrame{
 
 
     public void init(){
+        count = 0;
         chessBoard.init();
     }
 
@@ -43,7 +44,6 @@ public class ChessController extends JFrame{
      * 游戏结果监听器
      * */
     class MyGameListener implements GameListener{
-
 
         @Override
         public void blackWin() {
