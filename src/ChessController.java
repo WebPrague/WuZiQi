@@ -34,8 +34,8 @@ public class ChessController extends JFrame{
 
 
     public void init(){
-        count = 0;
         chessBoard.init();
+        count = 0;
     }
 
 

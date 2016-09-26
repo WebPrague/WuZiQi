@@ -62,10 +62,8 @@ public class ChessBoard {
             ImageIcon imageIcon = new ImageIcon(bufferedImage);
             gameListener.draw(imageIcon);
             chesses[coord.x][coord.y] = 1;
-
-            checkWiner();
-
             flag = false;
+            checkWiner();
             return true;
         }
         return false;
@@ -80,10 +78,8 @@ public class ChessBoard {
             ImageIcon imageIcon = new ImageIcon(bufferedImage);
             gameListener.draw(imageIcon);
             chesses[coord.x][coord.y] = 2;
-
-            checkWiner();
-
             flag = true;
+            checkWiner();
             return true;
         }
         return false;
