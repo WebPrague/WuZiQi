@@ -125,10 +125,11 @@ public class ChessController extends JFrame {
     private void inviteOther(){
         //System.out.println("邀请别人");
         try{
+            minaUtil = MinaUtil.getInstance(new MySimpleMinaListener(),true,null);
             JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
                     "你的IP地址为：" + InetAddress.getLocalHost().getHostAddress() ,"邀请别人", JOptionPane.INFORMATION_MESSAGE);
             isServer = true;
-            minaUtil = MinaUtil.getInstance(new MySimpleMinaListener(),true,null);
+
             canPlay = true;
             setTitle("轮到你下了哦");
         }catch (Exception e){
