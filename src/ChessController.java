@@ -249,6 +249,11 @@ public class ChessController extends JFrame {
             canPlay = true;
             setTitle("轮到你下了哦");
         }
+
+        @Override
+        public void onLine(String msg) {
+            setTitle(msg);
+        }
     }
 
     /**
