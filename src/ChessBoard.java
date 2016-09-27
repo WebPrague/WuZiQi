@@ -137,6 +137,21 @@ public class ChessBoard {
                                     gameListener.whiteWin();
                                 }
                                 return;
+                            }else{
+                                try {
+                                    if ((chesses[i][j] == (chesses[i+1][j-1]))&&(chesses[i][j] == (chesses[i+2][j-2]))
+                                            &&(chesses[i][j] == (chesses[i+3][j-3]))&&(chesses[i][j] == (chesses[i+4][j-4]))){
+                                        if (chesses[i][j] == 1){
+                                            gameListener.blackWin();
+                                        }else {
+                                            gameListener.whiteWin();
+                                        }
+                                        return;
+                                    }
+                                }catch (Exception e){
+                                    return;
+                                }
+
                             }
                         }
                     }
