@@ -90,7 +90,7 @@ public class ChessController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Icon authorIcon = new ImageIcon("zp.png");
-                JOptionPane.showMessageDialog(ChessController.this.getContentPane(),"作者：张鹏（14级软件工程2班）\n邮箱：zhangpeng@imudges.com\n版本：1.1.0beta","关于",JOptionPane. PLAIN_MESSAGE,authorIcon);
+                JOptionPane.showMessageDialog(ChessController.this.getContentPane(),"作者：张鹏（14级软件工程2班）\n邮箱：zhangpeng@imudges.com\n版本：1.1.1beta","关于",JOptionPane. PLAIN_MESSAGE,authorIcon);
             }
         });
 
