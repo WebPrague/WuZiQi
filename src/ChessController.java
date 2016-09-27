@@ -49,12 +49,24 @@ public class ChessController extends JFrame {
         //设置菜单栏
         JMenuBar jMenuBar = new JMenuBar();
         setJMenuBar(jMenuBar);
-        JMenu settingMenu = new JMenu("设置");
+        JMenu settingMenu = new JMenu("功能");
         jMenuBar.add(settingMenu);
+
         JMenuItem inviteOtherItem = new JMenuItem("邀请别人");
         JMenuItem acceptInviteItem = new JMenuItem("接受邀请");
+        JMenuItem exitItem = new JMenuItem("退出");
         settingMenu.add(inviteOtherItem);
         settingMenu.add(acceptInviteItem);
+        settingMenu.add(exitItem);
+
+
+        JMenu helpMenu = new JMenu("帮助");
+        jMenuBar.add(helpMenu);
+
+        JMenuItem helpItem = new JMenuItem("关于");
+        helpMenu.add(helpItem);
+
+
         inviteOtherItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,7 +79,21 @@ public class ChessController extends JFrame {
                 acceptInvite();
             }
         });
+        exitItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
+        helpItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Icon authorIcon = new ImageIcon("zp.png");
+                JOptionPane.showMessageDialog(ChessController.this.getContentPane(),"作者：张鹏（14级软件工程2班）\n邮箱：zhangpeng@imudges.com\n版本：1.1.0beta","关于",JOptionPane. PLAIN_MESSAGE,authorIcon);
+                System.exit(0);
+            }
+        });
 
         jLabel.setIcon(icon);
         jLabel.setBounds(0, 0, icon.getIconWidth(),icon.getIconHeight());
