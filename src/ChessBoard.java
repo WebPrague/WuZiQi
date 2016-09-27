@@ -59,7 +59,14 @@ public class ChessBoard {
             BufferedImage tempBufferedImage = ImageUtil.scale("black.png",GameConfig.ChessSize,GameConfig.ChessSize);
             Graphics g = bufferedImage.getGraphics();
             g.drawImage(tempBufferedImage,(int)(coord.x*32.5 + 17),(int)(coord.y*32.5 + 17),null);
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+
+            BufferedImage zxBufferedImage = ImageUtil.scale("zx.png",GameConfig.ChessSize,GameConfig.ChessSize);
+            BufferedImage outBufferedImage = new BufferedImage(bufferedImage.getWidth(),bufferedImage.getHeight(),bufferedImage.getType());
+            outBufferedImage.setData(bufferedImage.getData());
+            g = outBufferedImage.getGraphics();
+            g.drawImage(zxBufferedImage,(int)(coord.x*32.5 + 17),(int)(coord.y*32.5 + 17),null);
+
+            ImageIcon imageIcon = new ImageIcon(outBufferedImage);
             gameListener.draw(imageIcon);
             chesses[coord.x][coord.y] = 1;
             flag = false;
@@ -73,10 +80,21 @@ public class ChessBoard {
         Coord coord = getCoord(x,y);
         if (chesses[coord.x][coord.y] == 0 && !flag){
             BufferedImage tempBufferedImage = ImageUtil.scale("white.png",GameConfig.ChessSize,GameConfig.ChessSize);
-            Graphics2D g = (Graphics2D)bufferedImage.getGraphics();
+
+
+            Graphics g = bufferedImage.getGraphics();
             g.drawImage(tempBufferedImage,(int)(coord.x*32.5 + 17),(int)(coord.y*32.5 + 17),null);
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+
+            BufferedImage zxBufferedImage = ImageUtil.scale("zx.png",GameConfig.ChessSize,GameConfig.ChessSize);
+            BufferedImage outBufferedImage = new BufferedImage(bufferedImage.getWidth(),bufferedImage.getHeight(),bufferedImage.getType());
+            outBufferedImage.setData(bufferedImage.getData());
+            g = outBufferedImage.getGraphics();
+            g.drawImage(zxBufferedImage,(int)(coord.x*32.5 + 17),(int)(coord.y*32.5 + 17),null);
+
+            ImageIcon imageIcon = new ImageIcon(outBufferedImage);
             gameListener.draw(imageIcon);
+
+
             chesses[coord.x][coord.y] = 2;
             flag = true;
             checkWiner();

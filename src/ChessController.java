@@ -90,7 +90,7 @@ public class ChessController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Icon authorIcon = new ImageIcon("zp.png");
-                JOptionPane.showMessageDialog(ChessController.this.getContentPane(),"作者：张鹏（14级软件工程2班）\n邮箱：zhangpeng@imudges.com\n版本：1.1.0beta","关于",JOptionPane. PLAIN_MESSAGE,authorIcon);
+                JOptionPane.showMessageDialog(ChessController.this.getContentPane(),"作者：张鹏（14级软件工程2班）\n邮箱：zhangpeng@imudges.com\n版本：1.1.1beta","关于",JOptionPane. PLAIN_MESSAGE,authorIcon);
             }
         });
 
@@ -125,10 +125,11 @@ public class ChessController extends JFrame {
     private void inviteOther(){
         //System.out.println("邀请别人");
         try{
+            minaUtil = MinaUtil.getInstance(new MySimpleMinaListener(),true,null);
             JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
                     "你的IP地址为：" + InetAddress.getLocalHost().getHostAddress() ,"邀请别人", JOptionPane.INFORMATION_MESSAGE);
             isServer = true;
-            minaUtil = MinaUtil.getInstance(new MySimpleMinaListener(),true,null);
+
             canPlay = true;
             setTitle("轮到你下了哦");
         }catch (Exception e){
@@ -247,6 +248,11 @@ public class ChessController extends JFrame {
             playChess(myData.x, myData.y , true);
             canPlay = true;
             setTitle("轮到你下了哦");
+        }
+
+        @Override
+        public void onLine(String msg) {
+            setTitle(msg);
         }
     }
 

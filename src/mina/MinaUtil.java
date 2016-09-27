@@ -341,6 +341,7 @@ public class MinaUtil {
         public void sessionOpened(IoSession session) throws Exception {
             System.out.println(session.getId());
             System.out.println("sessionOpened");
+            simpleListener.onLine("对方玩家("+ session.getRemoteAddress().toString().replaceAll("/","") +")已上线");
         }
 
     }
