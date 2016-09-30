@@ -240,6 +240,7 @@ public class MinaUtil {
         }
 
         public void sessionClosed(IoSession session) throws Exception {
+            simpleListener.offLine();
             System.out.println(session.getId());
             System.out.println("sessionClosed");
             MinaUtil.this.session = null;
@@ -317,10 +318,11 @@ public class MinaUtil {
         }
 
         public void sessionClosed(IoSession session) throws Exception {
+            simpleListener.offLine();
             System.out.println(session.getId());
             System.out.println("sessionClosed");
             sessions.remove(session);
-            simpleListener.offLine();
+
         }
 
         public void sessionCreated(IoSession session) throws Exception {
