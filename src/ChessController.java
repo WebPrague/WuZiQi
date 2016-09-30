@@ -262,6 +262,12 @@ public class ChessController extends JFrame {
             JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
                     msg,"游戏提示", JOptionPane.INFORMATION_MESSAGE);
         }
+
+        @Override
+        public void offLine() {
+            JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
+                    "对方已下线","游戏提示", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     /**

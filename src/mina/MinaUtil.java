@@ -320,6 +320,7 @@ public class MinaUtil {
             System.out.println(session.getId());
             System.out.println("sessionClosed");
             sessions.remove(session);
+            simpleListener.offLine();
         }
 
         public void sessionCreated(IoSession session) throws Exception {

@@ -12,4 +12,10 @@ public interface SimpleMinaListener {
      * 对方上线
      * */
     public void onLine(String msg);
+
+
+    /**
+     * 对方下线
+     * */
+    public void offLine();
 }
