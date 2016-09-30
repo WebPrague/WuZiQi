@@ -25,6 +25,7 @@ public class MyImageEncoder implements ProtocolEncoder {
             ioBuffer.setAutoExpand(true);
             ioBuffer.putInt(myData.x);
             ioBuffer.putInt(myData.y);
+
             ioBuffer.flip();
             out.write(ioBuffer);
         }

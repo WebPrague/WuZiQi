@@ -75,7 +75,9 @@ public class ChessBoard {
         }
         return false;
     }
-
+    /**
+     * 在棋盘上添加一个白色棋子
+     * */
     public boolean addWhite(int x, int y){
         Coord coord = getCoord(x,y);
         if (chesses[coord.x][coord.y] == 0 && !flag){

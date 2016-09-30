@@ -22,14 +22,17 @@ public class ChessController extends JFrame {
 
     //局数计数
     private int count = 0;
-    //部署计数
+    //双方总步数计数
     private int stepCount = 0;
 
-    //MINA
+    //MINA框架的封装类
     private MinaUtil minaUtil = null;
+    //判断当前是否是服务器
     private boolean isServer = false;
 
-
+    /**
+     * 构造函数，设置各种布局
+     * */
     public ChessController(){
 
         this.setTitle("联机对战五子棋");
@@ -66,26 +69,28 @@ public class ChessController extends JFrame {
         JMenuItem helpItem = new JMenuItem("关于");
         helpMenu.add(helpItem);
 
-
+        //给菜单项添加时间处理程序：邀请
         inviteOtherItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 inviteOther();
             }
         });
+        //给菜单项添加时间处理程序：接受邀请
         acceptInviteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acceptInvite();
             }
         });
+        //给菜单项添加时间处理程序：退出程序
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
-
+        //给菜单项添加时间处理程序：关于作者
         helpItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,7 +108,9 @@ public class ChessController extends JFrame {
         jPanel.addMouseListener(new MyMouseListener());
     }
 
-
+    /**
+     * 初始化操作，清空棋盘，判断哪方先下
+     * */
     public void init(){
         chessBoard.init();
         count ++;
@@ -122,6 +129,9 @@ public class ChessController extends JFrame {
         }
     }
 
+    /**
+     * 菜单选项，邀请他人
+     * */
     private void inviteOther(){
         //System.out.println("邀请别人");
         try{
@@ -138,6 +148,9 @@ public class ChessController extends JFrame {
         }
     }
 
+    /**
+     * 菜单选项：接受邀请
+     * */
     private void acceptInvite(){
         //
         String b = JOptionPane.showInputDialog("请输入邀请方IP地址：");
@@ -152,7 +165,7 @@ public class ChessController extends JFrame {
         }
     }
     /**
-     * 游戏结果监听器
+     * 游戏结果监听器，由棋盘（ChessBoard）调用
      * */
     class MyGameListener implements GameListener{
 
@@ -172,7 +185,7 @@ public class ChessController extends JFrame {
         }
     }
     /**
-     * 鼠标按键监听器
+     * 鼠标按键监听器，在这里重写了鼠标按下的瞬间时所做的操作
      * */
     class MyMouseListener implements MouseListener{
 
@@ -182,17 +195,7 @@ public class ChessController extends JFrame {
 
         @Override
         public void mousePressed(MouseEvent e) {
-//            if(count ++ % 2 == 0){
-//                boolean flag = chessBoard.addBlack(e.getX(),e.getY());
-//                if (!flag){
-//                    count --;
-//                }
-//            }else{
-//                boolean flag = chessBoard.addWhite(e.getX(),e.getY());
-//                if (!flag){
-//                    count --;
-//                }
-//            }
+
             if(canPlay){
                 MyData myData = new MyData();
                 myData.x = e.getX();
@@ -219,6 +222,7 @@ public class ChessController extends JFrame {
      * 比赛结束，显示结果
      * */
     private void showResult(boolean flag){
+        //根据flag的值判断胜负
         if(flag){
             JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
                     "黑方胜","游戏结束", JOptionPane.INFORMATION_MESSAGE);
@@ -240,6 +244,9 @@ public class ChessController extends JFrame {
 
     }
 
+    /**
+     * socket通信框架Mina的监听器的实现，实现在收到对下子的时候,对方上线的时候的回调
+     * */
     class MySimpleMinaListener implements SimpleMinaListener{
 
         @Override
@@ -252,7 +259,8 @@ public class ChessController extends JFrame {
 
         @Override
         public void onLine(String msg) {
-            setTitle(msg);
+            JOptionPane.showInternalMessageDialog(ChessController.this.getContentPane(),
+                    msg,"游戏提示", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 

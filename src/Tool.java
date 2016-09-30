@@ -2,6 +2,10 @@
  * Created by HUPENG on 2016/9/26.
  */
 public class Tool {
+    /**
+     * 判断IP地址的合法性，这里采用了正则表达式的方法来判断
+     * return true，合法
+     * */
     public static boolean ipCheck(String text) {
         if (text != null && !text.isEmpty()) {
             // 定义正则表达式
