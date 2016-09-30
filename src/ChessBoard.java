@@ -9,9 +9,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Created by HUPENG on 2016/9/25.
- */
 public class ChessBoard {
 
     private BufferedImage bufferedImage = null;
@@ -54,6 +51,7 @@ public class ChessBoard {
      * 棋盘山增加一个黑色的棋子
      * */
     public boolean addBlack(int x, int y){
+        //鼠标点击坐标转棋盘坐标
         Coord coord = getCoord(x,y);
         if (chesses[coord.x][coord.y] == 0 && flag){
             BufferedImage tempBufferedImage = ImageUtil.scale("black.png",GameConfig.ChessSize,GameConfig.ChessSize);
@@ -176,8 +174,6 @@ public class ChessBoard {
                         }
                     }
                 }
-
-
             }
         }
     }

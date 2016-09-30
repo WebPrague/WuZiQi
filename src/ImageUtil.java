@@ -6,9 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by HUPENG on 2016/9/25.
- */
+
 public class ImageUtil {
     /**
      * 缩放图像（按比例缩放）

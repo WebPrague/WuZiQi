@@ -13,9 +13,6 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by HUPENG on 2016/9/6.
- */
 public class MinaUtil {
     /**
      * 客户端用：
@@ -343,6 +340,5 @@ public class MinaUtil {
             System.out.println("sessionOpened");
             simpleListener.onLine("对方玩家("+ session.getRemoteAddress().toString().replaceAll("/","") +")已上线");
         }
-
     }
 }

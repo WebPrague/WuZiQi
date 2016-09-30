@@ -8,9 +8,7 @@ import org.apache.mina.filter.codec.CumulativeProtocolDecoder;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
 
 
-/**
- * Created by HUPENG on 2016/9/4.
- */
+
 public class MyImageDecoder extends CumulativeProtocolDecoder {
 
     @Override

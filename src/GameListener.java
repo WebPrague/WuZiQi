@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by HUPENG on 2016/9/25.
- */
 public interface GameListener {
     /**
      * 黑色棋子胜

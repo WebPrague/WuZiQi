@@ -1,8 +1,5 @@
 package mina;
 
-/**
- * Created by HUPENG on 2016/9/26.
- */
 public class Mina {
     /**
      * 服务器

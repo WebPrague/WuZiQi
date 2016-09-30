@@ -8,9 +8,6 @@ import org.apache.mina.filter.codec.ProtocolEncoderOutput;
 
 import java.io.ByteArrayOutputStream;
 
-/**
- * Created by HUPENG on 2016/9/4.
- */
 public class MyImageEncoder implements ProtocolEncoder {
 
     @Override

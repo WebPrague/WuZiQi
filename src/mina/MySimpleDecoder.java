@@ -7,9 +7,7 @@ import org.apache.mina.filter.codec.ProtocolDecoderOutput;
 import org.apache.mina.filter.codec.ProtocolEncoder;
 import org.apache.mina.filter.codec.ProtocolEncoderOutput;
 
-/**
- * Created by HUPENG on 2016/9/26.
- */
+
 public class MySimpleDecoder implements ProtocolDecoder {
 
     @Override

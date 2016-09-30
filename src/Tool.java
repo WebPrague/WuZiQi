@@ -1,6 +1,3 @@
-/**
- * Created by HUPENG on 2016/9/26.
- */
 public class Tool {
     /**
      * 判断IP地址的合法性，这里采用了正则表达式的方法来判断

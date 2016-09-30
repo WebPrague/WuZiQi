@@ -69,28 +69,28 @@ public class ChessController extends JFrame {
         JMenuItem helpItem = new JMenuItem("关于");
         helpMenu.add(helpItem);
 
-        //给菜单项添加时间处理程序：邀请
+        //给菜单项添加事件处理程序：邀请
         inviteOtherItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 inviteOther();
             }
         });
-        //给菜单项添加时间处理程序：接受邀请
+        //给菜单项添加事件处理程序：接受邀请
         acceptInviteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 acceptInvite();
             }
         });
-        //给菜单项添加时间处理程序：退出程序
+        //给菜单项添加事件处理程序：退出程序
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
-        //给菜单项添加时间处理程序：关于作者
+        //给菜单项添加事件处理程序：关于作者
         helpItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -165,7 +165,7 @@ public class ChessController extends JFrame {
         }
     }
     /**
-     * 游戏结果监听器，由棋盘（ChessBoard）调用
+     * 游戏监听器，由棋盘（ChessBoard）调用
      * */
     class MyGameListener implements GameListener{
 

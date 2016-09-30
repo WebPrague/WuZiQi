@@ -1,6 +1,4 @@
-/**
- * Created by HUPENG on 2016/9/25.
- */
+
 public class GameConfig {
     /*
     * 设置棋盘网格行数列数为19
